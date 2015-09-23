@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:id="@+id/TopNavLayout">
+
+        <Button
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/backButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/arcade_title"
+            android:layout_toStartOf="@+id/arcade_title" />
+
+        <TextView
+                android:layout_width="167dp"
+                android:layout_height="109dp"
+                android:text="@string/arcadeTitle"
+                android:id="@+id/arcade_title"
+                android:textSize="40sp"
+
+                android:layout_gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="#fff" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guiLayout"
+        android:paddingLeft="8dp">
+
+
+        <Button
+            android:layout_width="83dp"
+            android:layout_height="83dp"
+            android:id="@+id/Aone"
+            android:background="@drawable/aone_83_83"
+            android:layout_alignBottom="@+id/Aseven"
+            android:layout_toRightOf="@+id/Atwo"
+            android:layout_toEndOf="@+id/Atwo" />
+
+        <Button
+            android:layout_width="118dp"
+            android:layout_height="43dp"
+            android:id="@+id/Atwo"
+            android:background="@drawable/atwo_118_43"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="41dp"
+            android:id="@+id/Athree"
+            android:background="@drawable/athree_110_41"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/Afour"
+            android:layout_toEndOf="@+id/Afour" />
+
+        <Button
+            android:layout_width="85dp"
+            android:layout_height="49dp"
+            android:id="@+id/Afour"
+            android:background="@drawable/afour_85_49"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/Atwo"
+            android:layout_toEndOf="@+id/Atwo" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="115dp"
+            android:id="@+id/Afive"
+            android:background="@drawable/afive_40_155"
+            android:layout_below="@+id/Athree"
+            android:layout_toLeftOf="@+id/Aone"
+            android:layout_toStartOf="@+id/Aone" />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="118dp"
+            android:id="@+id/Asix"
+            android:background="@drawable/asix_48_118"
+            android:layout_toRightOf="@+id/Aone"
+            android:layout_toEndOf="@+id/Aone"
+            android:layout_below="@+id/Athree"
+            android:layout_alignBottom="@+id/Aeight" />
+
+
+
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="108dp"
+            android:id="@+id/Aseven"
+            android:background="@drawable/aseven_75_108"
+            android:layout_below="@+id/Atwo"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="78dp"
+            android:layout_height="113dp"
+            android:id="@+id/Aeight"
+            android:background="@drawable/aeight_79_113"
+            android:layout_alignBottom="@+id/Afive"
+            android:layout_toRightOf="@+id/Asix"
+            android:layout_toEndOf="@+id/Asix" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

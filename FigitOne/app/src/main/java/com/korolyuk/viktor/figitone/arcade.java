@@ -20,15 +20,12 @@ public class arcade extends ActionBarActivity {
     int green = 0;
     int blue = 0;
 int i = 1;
+    int code1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.arcade);
-
-//tools:context=".MainActivity"
-
-        // ImageView arcadeM = (ImageView) findViewById(R.id.imageView);
 
 
 
@@ -58,34 +55,7 @@ int i = 1;
         return super.onOptionsItemSelected(item);
     }
 
-    public void bgColorChange() {
-
-        final Handler myHandler = new Handler();
-        (new Thread(new Runnable(){
-
-            @Override
-            public void run() {
-                final RelativeLayout bg = (RelativeLayout) findViewById(R.id.guiLayout);
-                //final String changeBG = bg.setBackgroundColor(Color.WHITE);
-                myHandler.post(new Runnable() {
-                    @Override
-                public void run() {
-                        while (true) {
-                            red += 5;
-                            blue += 5;
-                            green += 5;
-                            bg.setBackgroundColor(Color.rgb(red, green, blue));
-
-                        }
-                    }
-                });
-
-            }
-        })).start();
-
-
-
-
 
     }
 }
+

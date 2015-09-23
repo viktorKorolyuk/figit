@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
+import java.util.Random;
 
 
 public class arcade extends ActionBarActivity {
@@ -20,13 +21,14 @@ public class arcade extends ActionBarActivity {
     int green = 0;
     int blue = 0;
 int i = 1;
-    int code1;
+    String[] code = {"123","321"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.arcade);
 
+String code1 = code[new Random().nextInt(code.length)];
 
 
 
@@ -56,6 +58,6 @@ int i = 1;
     }
 
 
-    }
+
 }
 

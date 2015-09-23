@@ -32,77 +32,7 @@ int i = 1;
 
 
 
-        final  Button aone =(Button) findViewById(R.id.Aone);
-        final  Button atwo =(Button) findViewById(R.id.Atwo);
-        final  Button athree =(Button) findViewById(R.id.Athree);
-        final  Button afour =(Button) findViewById(R.id.Afour);
-        final  Button afive =(Button) findViewById(R.id.Afive);
-        final  Button asix =(Button) findViewById(R.id.Asix);
-        final  Button aseven =(Button) findViewById(R.id.Aseven);
-        final  Button aeight =(Button) findViewById(R.id.Aeight);
 
-        aone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        atwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        athree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        aone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-bgColorChange();
-            }
-        });
-
-        afour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        afive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        asix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        aseven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        aeight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
     }
 

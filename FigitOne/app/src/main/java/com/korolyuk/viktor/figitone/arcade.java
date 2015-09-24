@@ -25,7 +25,11 @@ public class arcade extends ActionBarActivity {
     boolean click12 = false;
     boolean click13 = false;
     int i = 1;
-    String[] code = {"1,2,3","3,2,1"};
+    int bu1One = 0;
+    int bu2One = 0;
+    int bu3One = 0;
+
+    String[] code = {"1,2,3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +42,12 @@ public class arcade extends ActionBarActivity {
         String code11 = code1Decode[0];
         String code12 = code1Decode[1];
         String code13 = code1Decode[2];
-
         final Button bu1 = (Button) findViewById(R.id.bu1);
         final Button bu2 = (Button) findViewById(R.id.bu2);
         final Button bu3 = (Button) findViewById(R.id.bu3);
+
+
+
 
 
         bu1.setOnClickListener(new View.OnClickListener() {
@@ -56,11 +62,7 @@ public class arcade extends ActionBarActivity {
                                 click11 = true;
                                 Toast.makeText(getApplicationContext(), "click11 = true", Toast.LENGTH_LONG).show();
                             }}}}
-                    if (codes.equals("3,2,1")) {
-                        if (click13 == true) {
-                            if(click12 == true){
-                                click11 = true;
-                            }}}
+
                 else {click11 = true;}
             }});
         bu2.setOnClickListener(new View.OnClickListener() {
@@ -74,13 +76,7 @@ public class arcade extends ActionBarActivity {
                                 click12 = true;
                             }}}
                 }
-                    if (codes.equals("3,2,1")) {
-                        if (click13 == true) {
-                            if(click12 == false){
-                                if (click11 == false){
-                                    click12 = true;
-                                }
-                            }}}
+
                 else {click12 = true;}
             }});
 
@@ -91,35 +87,19 @@ public class arcade extends ActionBarActivity {
 
                 if (codes.equals("1,2,3")) {
 
-                    if (click11 == true) {
-                        if (click12 == true) {
+                    if (click11) {
+                        if (click12) {
                             if (!click13) {
                                 click13 = true;
-                              //  Toast.makeText(getApplicationContext(), "1,2,3 works", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "1,2,3 works", Toast.LENGTH_LONG).show();
                                 //// TODO: 15-09-23 DO COMMAND HERE
                             }}}}
-                if (codes.equals("3,2,1")) {
-                    if (!click11) {
-                        if(!click12){
 
-                           /**
-                            if(!click13){
-                                if (!click12) {
-                                    if(!click11){
-                                        click13 = true;
-                                    }
-
-
-                        }
-                             */
-                        }
-                    }
-                }
-                if (click13 == true || click12 == true || click11 == true){
+                if (click13 || click12 || click11){
                     Toast.makeText(getApplicationContext(), "Range should be between 15 to 25", Toast.LENGTH_LONG).show();
 
                 }
-            else{click13 = true;}
+
             }
 
 

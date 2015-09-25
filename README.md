@@ -1,5 +1,5 @@
 # fIGIT
-Program Created to Help People Deal With Boredom Problems
+A prgram to help poeple deal with boredom problems in an addictive manner. This is a test appliaction to see how it turns out.
 
 # TODO
 

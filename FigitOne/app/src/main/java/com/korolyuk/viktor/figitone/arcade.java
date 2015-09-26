@@ -28,17 +28,27 @@ public class arcade extends ActionBarActivity {
     int bu1One = 0;
     int bu2One = 0;
     int bu3One = 0;
+    boolean bu1Clicked = false;
+    boolean bu2Clicked = false;
+    boolean bu3Clicked = false;
+
 
     String[] code = {"1,2,3"};
+    String code1temp = code[new Random().nextInt(code.length)];
+    String[] code1Decode = code1temp.split(",");
+    final String codes = code1Decode.toString();
+    String code11 = code1Decode[0];
+    String code12 = code1Decode[1];
+    String code13 = code1Decode[2];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.arcade);
 
-        String code1temp = code[new Random().nextInt(code.length)];
-        String[] code1Decode = code1temp.split(",");
-        final String codes = code1Decode.toString();
+        String code1temp = code[new Random().nextInt(code.length)]; //choose code
+        String[] code1Decode = code1temp.split(","); //split the code into seperate objects
+        final String codes = code1Decode.toString(); // turn into strings
         String code11 = code1Decode[0];
         String code12 = code1Decode[1];
         String code13 = code1Decode[2];
@@ -47,69 +57,112 @@ public class arcade extends ActionBarActivity {
         final Button bu3 = (Button) findViewById(R.id.bu3);
 
 
-
-
+/**
+ * When a button is pressed then the boolean changes, the boolean changes so that you dont mess up while entering the codes...
+ *
+ * I NEED TO FIX THAT AS SOON AS POSSIBLE!
+ */
 
         bu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (codes.equals("1,2,3")) {
+                if (!bu1Clicked) {
+                    bu1Clicked = true;
+                    if (bu1One == 0) {
+                        bu1One = 1;
+                        Toast.makeText(getApplicationContext(), "Bu1One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One == 0) {
+                        bu2One = 1;
+                        Toast.makeText(getApplicationContext(), "Bu2One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One > 0 && bu3One == 0) {
+                        bu3One = 1;
 
-                    if (click11 == false) {
-                        if (click12 == false) {
-                            if (click13 == false) {
-                                click11 = true;
-                                Toast.makeText(getApplicationContext(), "click11 = true", Toast.LENGTH_LONG).show();
-                            }}}}
+                    }
 
-                else {click11 = true;}
-            }});
+                    if (bu1One > 0 && bu2One > 0 && bu3One > 0) {
+                        //// TODO: 15-09-25 Make function that will deal with checking if the code entered is correct.
+                        checkCode();
+                    }
+
+                } else {
+//// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
+                    //// TODO: 15-09-26 OPTIONAL OBVIOUSLY
+                }
+
+
+            }
+        });
         bu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (codes.equals("1,2,3")) {
 
-                    if (click11 = true) {
-                        if (click12 = false) {
-                            if (click13 = false) {
-                                click12 = true;
-                            }}}
+                if (!bu2Clicked) {
+                    bu2Clicked = true;
+                    if (bu1One == 0) {
+                        bu1One = 2;
+                        Toast.makeText(getApplicationContext(), "Bu1One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One == 0) {
+                        bu2One = 2;
+                        Toast.makeText(getApplicationContext(), "Bu2One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One > 0 && bu3One == 0) {
+                        bu3One = 2;
+
+                    }
+
+                    if (bu1One > 0 && bu2One > 0 && bu3One > 0) {
+                        //// TODO: 15-09-25 Make function that will deal with checking if the code entered is correct.
+                        checkCode();
+
+                    }
+
+                } else {
+//// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
                 }
 
-                else {click12 = true;}
-            }});
+
+            }
+
+
+
+        });
+
 
         bu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                if (!bu3Clicked) {
+                    bu3Clicked = true;
+                    if (bu1One == 0) {
+                        bu1One = 3;
+                        Toast.makeText(getApplicationContext(), "Bu1One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One == 0) {
+                        bu2One = 3;
+                        Toast.makeText(getApplicationContext(), "Bu2One == 1", Toast.LENGTH_SHORT).show();
+                    }else if (bu1One > 0 && bu2One > 0 && bu3One == 0) {
+                        bu3One = 3;
 
-                if (codes.equals("1,2,3")) {
+                    }
 
-                    if (click11) {
-                        if (click12) {
-                            if (!click13) {
-                                click13 = true;
-                                Toast.makeText(getApplicationContext(), "1,2,3 works", Toast.LENGTH_LONG).show();
-                                //// TODO: 15-09-23 DO COMMAND HERE
-                            }}}}
 
-                if (click13 || click12 || click11){
-                    Toast.makeText(getApplicationContext(), "Range should be between 15 to 25", Toast.LENGTH_LONG).show();
+                    if (bu1One > 0 && bu2One > 0 && bu3One > 0) {
+                        //// TODO: 15-09-25 Make function that will deal with checking if the code entered is correct.
+                        checkCode();
 
+                    }
+
+                } else {
+//// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
                 }
+
+
 
             }
 
 
         });
     }
-
-
-
-
-
 
 
     @Override
@@ -134,7 +187,24 @@ public class arcade extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void checkCode() {
 
+        if (code1temp == "1,2,3") {
+            int supo1 = 1;
+            int supo2 = 2;
+            int supo3 = 3;
+
+            if (bu1One == supo1 && bu2One == supo2 && bu3One == supo3) {
+                Toast.makeText(getApplicationContext(), "Congrats you got the code correct!", Toast.LENGTH_SHORT).show();
+
+            } else {
+
+            }
+
+
+        }
+
+    }
 
 }
 

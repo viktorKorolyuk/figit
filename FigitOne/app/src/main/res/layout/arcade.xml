@@ -47,28 +47,27 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
+            android:layout_height="500px"
+            android:text="Bu1One"
             android:id="@+id/bu1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/bu2"
+            android:layout_toStartOf="@+id/bu2" />
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
+            android:layout_height="400px"
+            android:text="Bu2One"
             android:id="@+id/bu2"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/bu1"
-            android:layout_toEndOf="@+id/bu1" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
+            android:layout_height="500px"
+            android:text="Bu3One"
             android:id="@+id/bu3"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_toRightOf="@+id/bu2"
             android:layout_toEndOf="@+id/bu2" />
     </RelativeLayout>

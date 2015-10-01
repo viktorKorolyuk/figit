@@ -35,7 +35,7 @@ public class arcade extends ActionBarActivity {
 
 
 
-    String[] code = {"1,2,3","3,2,1","1,3,2"};
+    String[] code = {"1,1,1"};
     String code1temp = code[new Random().nextInt(code.length)];
     String[] code1Decode = code1temp.split(",");
     String codes = code1Decode.toString();
@@ -60,12 +60,22 @@ choosePass();
  * When a button is pressed then the boolean changes, the boolean changes so that you dont mess up while entering the codes...
  *
  * I NEED TO FIX THAT AS SOON AS POSSIBLE!
+ *
+ * It is fixed what do you mean?
+ * What?
+ * WHat?
+ * How are you talking to me? This project has no cintributers!
+ * MAGIC!*!*!*!*!*!*!*! JK its just you.
+ * Me?
+ * YES, YOU!
+ *
+ *  --- A random convo by Viktor Korolyuk @October 1 2015 @@2:17 ---
  */
 
         bu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+/**
                 if (!bu1Clicked) {
                //     bu1Clicked = true;
 
@@ -74,6 +84,7 @@ choosePass();
 //// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
                     //// TODO: 15-09-26 OPTIONAL OBVIOUSLY
                 }
+ */
                 if (bu1One == 0) {
                     bu1One = 1;
                     //     Toast.makeText(getApplicationContext(), "Bu1One == 1", Toast.LENGTH_SHORT).show();
@@ -96,13 +107,14 @@ choosePass();
         bu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+/**
                 if (!bu2Clicked) {
 
 
                 } else {
 //// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
                 }
+ */
 
             //    bu2Clicked = true;
                 if (bu1One == 0) {
@@ -133,13 +145,14 @@ choosePass();
         bu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+/**
                 if (!bu3Clicked) {
               //      bu3Clicked = true;
 
                 } else {
 //// TODO: 15-09-25 make it so that when the user clicks same button then the code resets with alert
                 }
+ */
 
                 if (bu1One == 0) {
                     bu1One = 3;
@@ -218,9 +231,9 @@ choosePass();
         bu1One = 0;
         bu2One = 0;
         bu3One = 0;
-        bu1Clicked = false;
-        bu2Clicked = false;
-        bu3Clicked = false;
+     //   bu1Clicked = false;
+    //    bu2Clicked = false;
+     //   bu3Clicked = false;
         choosePass();
     }
 

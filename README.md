@@ -1,9 +1,12 @@
-# fIGIT
-A program developed to help poeple deal with boredom problems in an addictive manner.
-This is a test appliaction to see how it turns out, while also 'honing' my programing skills.
+# FIGIT
+A program developed to help people deal with short attention spans, and the uncontrollable urge to figit.
+This is a test program, with 2 goals.
+1. Create a useful application
+2. Create an excuse to better my programming skill-set
 
-# TODO
-
+## TODO
 - add usable UI
-- settings page
-- more games
+- add a settings page
+- optimize program to use less memory
+- optimize file structure
+- 

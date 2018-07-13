@@ -9,4 +9,3 @@ This is a test program, with 2 goals.
 - add a settings page
 - optimize program to use less memory
 - optimize file structure
-- 

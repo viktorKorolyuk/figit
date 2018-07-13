@@ -1,20 +1,19 @@
 package com.korolyuk.viktor.figitone;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
-    private int arc = 0;
-    private int time = 0;
-    private int sco = 0;
+    private boolean arcadeToggle = false;
+    private boolean timedToggle = false;
+    private boolean scoresToggle = false;
 
 
     @Override
@@ -34,27 +33,21 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
                 iv.setImageResource(R.drawable.one_on_all_off);
-                arc = 1;
-                time =0;
-                sco = 0;
+                setArcTimeSco(1, 0, 0);
             }
         });
         timed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 iv.setImageResource(R.drawable.two_on_all_off);
-                arc = 0;
-                time =1;
-                sco = 0;
+                setArcTimeSco(0, 1, 0);
             }
         });
         score.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 iv.setImageResource(R.drawable.three_on_all_off);
-                arc = 0;
-                time =0;
-                sco = 1;
+                setArcTimeSco(0, 0, 1);
             }
         });
 
@@ -62,29 +55,24 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View view) {
 
-         /*
-           *
-            *
-             *   SharedPreferences settings = getSharedPreferences("Settings", MODE_WORLD_READABLE);
-             *   SharedPreferences.Editor poluEdit_two = settings.edit();
-            *    poluEdit_two.putInt("setting", rains);
-           *     poluEdit_two.commit();
-          */
-                if (arc == 1) {
+                /*
+                 *   SharedPreferences settings = getSharedPreferences("Settings", MODE_WORLD_READABLE);
+                 *   SharedPreferences.Editor poluEdit_two = settings.edit();
+                 *    poluEdit_two.putInt("setting", rains);
+                 *     poluEdit_two.commit();
+                 */
+                if (arcadeToggle) {
                     Intent arcade = new Intent(MainActivity.this, arcade.class);
                     startActivity(arcade);
-                }
-                if (time == 1) {
+                } else if (timedToggle) {
+
+                } else if (scoresToggle) {
 
                 }
-                if (sco == 1) {
-
-                }
-                if (sco == 0 && arc == 0  && time == 0)
-                {
+                if (!(scoresToggle || arcadeToggle || timedToggle)) {
                     throw new RuntimeException("Idiot user!");
                 }
-          }
+            }
         });
     }
 
@@ -108,5 +96,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setArcTimeSco(int arc, int time, int sco) {
+        this.arcadeToggle = arc == 1;
+        this.timedToggle = time == 1;
+        this.scoresToggle = sco == 1;
     }
 }

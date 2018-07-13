@@ -1,75 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000"
-
-    >
+    android:orientation="vertical"
+    android:theme="@style/arcadeTheme">
 
 
     <RelativeLayout
+        android:id="@+id/TopNavLayout"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:id="@+id/TopNavLayout">
+        android:layout_height="105dp">
 
         <Button
+            android:id="@+id/backButton"
             android:layout_width="76dp"
             android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/backButton"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/arcade_title"
-            android:layout_toStartOf="@+id/arcade_title" />
+            android:layout_toStartOf="@+id/arcade_title"
+            android:text="Back" />
 
         <TextView
-                android:layout_width="167dp"
-                android:layout_height="109dp"
-                android:text="@string/arcadeTitle"
-                android:id="@+id/arcade_title"
-                android:textSize="40sp"
-
-                android:layout_gravity="right"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
+            android:id="@+id/arcade_title"
+            android:layout_width="167dp"
+            android:layout_height="109dp"
             android:layout_alignParentEnd="true"
-            android:textColor="#fff" />
+            android:layout_alignParentRight="true"
+
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="@string/arcadeTitle"
+            android:textColor="#fff"
+            android:textSize="40sp" />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/guiLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/guiLayout"
         android:paddingLeft="8dp">
 
 
         <Button
+            android:id="@+id/bu1"
+            style="@style/arcadeThemeButton"
             android:layout_width="wrap_content"
             android:layout_height="500px"
-            android:text="Bu1One"
-            android:id="@+id/bu1"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/bu2"
-            android:layout_toStartOf="@+id/bu2" />
+            android:layout_toStartOf="@+id/bu2"
+            android:text="Bu1One" />
 
         <Button
+            android:id="@+id/bu2"
+            style="@style/arcadeThemeButton"
             android:layout_width="wrap_content"
             android:layout_height="400px"
-            android:text="Bu2One"
-            android:id="@+id/bu2"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:text="Bu2One" />
 
         <Button
+            android:id="@+id/bu3"
+            style="@style/arcadeThemeButton"
             android:layout_width="wrap_content"
             android:layout_height="500px"
-            android:text="Bu3One"
-            android:id="@+id/bu3"
             android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/bu2"
             android:layout_toRightOf="@+id/bu2"
-            android:layout_toEndOf="@+id/bu2" />
+            android:text="Bu3One" />
     </RelativeLayout>
 
 

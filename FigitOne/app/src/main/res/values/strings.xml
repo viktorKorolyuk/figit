@@ -3,6 +3,6 @@
 
     <string name="hello_world">Set Settings:</string>
     <string name="action_settings">Settings</string>
-    <string name="startBut">Start</string>
+    <string name="startBut">Select.</string>
     <string name="arcadeTitle">Arcade</string>
 </resources>

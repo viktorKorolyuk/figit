@@ -1,8 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+
+        <!--<item name="android:background">#111111</item>-->
     </style>
 
     <style name="arcadeTheme" parent="Theme.AppCompat.NoActionBar">
@@ -10,9 +12,14 @@
         <item name="android:background">#111111</item>
     </style>
 
-    <style name="arcadeThemeButton">
-        <!-- Customize your theme here. -->
+    <style name="arcadeTheme.Button">
         <item name="android:background">#222</item>
+        <!--<item name="android:layout_margin">1dp</item>-->
+    </style>
+
+    <style name="arcadeTheme.mainText">
+        <item name="android:textSize">70dp</item>
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>

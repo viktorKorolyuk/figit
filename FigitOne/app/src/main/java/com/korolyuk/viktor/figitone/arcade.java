@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 
 public class arcade extends AppCompatActivity {
@@ -19,12 +20,6 @@ public class arcade extends AppCompatActivity {
     int green = 0;
     int blue = 0;
 
-
-    // These variables record the order in which the buttons were pressed
-    int bu1One = 0;
-    int bu2One = 0;
-    int bu3One = 0;
-
     final int CHOICES[] = {1, 2, 3};
     int chosen[] = new int[3];
     int currentIndex = 0;
@@ -33,6 +28,7 @@ public class arcade extends AppCompatActivity {
     int code12;
     int code13;
     Vibrator vibrator;
+    TextView scoreView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +40,7 @@ public class arcade extends AppCompatActivity {
         final Button bu1 = (Button) findViewById(R.id.bu1);
         final Button bu2 = (Button) findViewById(R.id.bu2);
         final Button bu3 = (Button) findViewById(R.id.bu3);
+        scoreView = (TextView) findViewById(R.id.currentScore);
         vibrator = (Vibrator) getApplicationContext().getSystemService(VIBRATOR_SERVICE);
 
 
@@ -70,10 +67,7 @@ public class arcade extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 chosen[currentIndex++] = 1;
-
                 if (currentIndex == 3) checkCode();
-
-
             }
         });
 
@@ -81,11 +75,8 @@ public class arcade extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 chosen[currentIndex++] = 2;
-
                 if (currentIndex == 3) checkCode();
             }
-
-
         });
 
 
@@ -95,8 +86,6 @@ public class arcade extends AppCompatActivity {
                 chosen[currentIndex++] = 3;
                 if (currentIndex == 3) checkCode();
             }
-
-
         });
     }
 
@@ -108,24 +97,32 @@ public class arcade extends AppCompatActivity {
 
     public void checkCode() {
         green += 10;
-        int x = code11;
-        int y = code12;
-        int z = code13;
 
-        if (chosen[0] == x && chosen[1] == y && chosen[2] == z) {
+        int score = 0;
+
+        // Increase score by one if the inputted code matches the desired code.
+        score += chosen[0] == code11 ? 1 : 0;
+        score += chosen[1] == code12 ? 1 : 0;
+        score += chosen[2] == code13 ? 1 : 0;
+
+
+        if (score == 3) {
+
             // Sets the background colour to a green "win"
-            rl.setBackgroundColor(Color.rgb(0, green, 0));
+//            rl.setBackgroundColor(Color.rgb(0, green, 0));
             resetCode();
             choosePass();
 
+            // Vibrate to indicate win.
+            vibrator.vibrate(150);
+            scoreView.setText("0");
         } else {
 
-            // Reset to black.
+            scoreView.setText(score + "");
+            // Reset to start colour.
             rl.setBackgroundColor(Color.parseColor("#111111"));
             resetCode();
 
-            // Vibrate to indicate loss.
-            vibrator.vibrate(500);
         }
 
 
